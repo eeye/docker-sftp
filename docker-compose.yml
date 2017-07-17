@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+      sftp:
+            image: atmoz/sftp
+            #create keys with "ssh-keygen"
+            volumes:
+                  - ./share/user:/home/user/
+                  - ./ssh/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key
+                  - ./ssh/ssh_host_rsa_key.pub:/etc/ssh/ssh_host_rsa_key.pub
+                  #- ./conf/users.conf:/etc/sftp/users.conf
+            ports:
+                  - "2222:22"
+            command: user:pass:1091:33
+            

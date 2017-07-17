@@ -3,3 +3,4 @@
 #mount | grep var
 # umount -l
 #umount -f
+#chown 1091:33 html
